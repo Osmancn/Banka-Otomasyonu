@@ -27,8 +27,13 @@ namespace WindowsFormsApp6
         private void btnListele_Click(object sender, EventArgs e)
         {
             grdMusteriListesi.DataSource = null;
-            grdMusteriListesi.DataSource = BankaApp;
+            grdMusteriListesi.DataSource = BankaApp.müsteriList;
             
+        }
+
+        private void frmMusteriListe_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

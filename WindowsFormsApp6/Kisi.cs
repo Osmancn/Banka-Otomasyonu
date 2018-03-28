@@ -8,9 +8,9 @@ namespace WindowsFormsApp6
 {
     public abstract class Kisi
     {
-        protected string ad { get; set; }
-        protected string soyad { get; set; }
-        protected double tc { get; set; }
+        public string ad { get; private set; }
+        public string soyad { get; private set; }
+        public double tc { get; private set; }
         public Kisi()
         {
 

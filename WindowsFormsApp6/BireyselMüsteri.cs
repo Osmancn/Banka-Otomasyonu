@@ -13,6 +13,21 @@ namespace WindowsFormsApp6
         public BireyselMüsteri()
         {
             müsteriTürü = "Bireysel Müşteri";
+            hesapSayisi = 0;
+            maxHesapSayisi = 20;
+            ilkCekildigiTarih = DateTime.Now.Date;
+            kalanLimit = GUNLUKLIMIT;
+            cekilenPara = 0;
+        }
+        public BireyselMüsteri(int müsteriNo)
+        {
+            müsteriTürü = "Bireysel Müşteri";
+            hesapSayisi = 0;
+            maxHesapSayisi = 20;
+            this.müsteriNo = müsteriNo;
+            ilkCekildigiTarih = DateTime.Now.Date;
+            kalanLimit = GUNLUKLIMIT;
+            cekilenPara = 0;
         }
     }
 }

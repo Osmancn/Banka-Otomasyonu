@@ -59,6 +59,7 @@
     <Compile Include="Gelir Gider Özeti.Designer.cs">
       <DependentUpon>Gelir Gider Özeti.cs</DependentUpon>
     </Compile>
+    <Compile Include="GelirGider.cs" />
     <Compile Include="Havale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +79,13 @@
       <DependentUpon>Hesap Kapat.cs</DependentUpon>
     </Compile>
     <Compile Include="Hesap.cs" />
+    <Compile Include="HesapOzeti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HesapOzeti.Designer.cs">
+      <DependentUpon>HesapOzeti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HespOzeti.cs" />
     <Compile Include="Kisi.cs" />
     <Compile Include="Müsteri.cs" />
     <Compile Include="Müşteri Ekle.cs">
@@ -121,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hesap Kapat.resx">
       <DependentUpon>Hesap Kapat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HesapOzeti.resx">
+      <DependentUpon>HesapOzeti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Müşteri Ekle.resx">
       <DependentUpon>Müşteri Ekle.cs</DependentUpon>

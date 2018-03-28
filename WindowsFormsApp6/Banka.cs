@@ -17,11 +17,21 @@ namespace WindowsFormsApp6
             müsteriSayisi = 0;
         }
 
-        public void MüsteriEkle()
+        public void MüsteriEkle(string ad,string soyad,double TC,string Tür)
         {
             müsteriSayisi++;
-            Müsteri m = new Müsteri(100000 + müsteriSayisi);
-            müsteriList.Add(m);
+            if (Tür == "Bireysel Müşteri")
+            {
+                Müsteri m = new BireyselMüsteri(100000 + müsteriSayisi);
+                m.KisiBilgiEkle(ad, soyad, TC);
+                müsteriList.Add(m);
+            }
+            else if(Tür== "Ticari Müşteri")
+            {
+                Müsteri m = new TicariMüsteri(100000 + müsteriSayisi);
+                m.KisiBilgiEkle(ad, soyad, TC);
+                müsteriList.Add(m);
+            }
         }
 
         public void Havale(Hesap ana, Hesap hedef, decimal m)
@@ -38,13 +48,15 @@ namespace WindowsFormsApp6
 
                 müsteriList[hedefIndex].hesapList[müsteriList[hedefIndex].HesapIndexBul(hedef)].
                     ParaEkle(m);
+
+               
             }
 
         }
 
-        private int MüsteriIndexBul(Hesap h)
+        private byte MüsteriIndexBul(Hesap h)
         {
-            int index = 0;
+            byte index = 0;
             int müsteriNo;
 
             müsteriNo =(h.hesapNo -h.hesapNo % 100)/100;
@@ -56,5 +68,49 @@ namespace WindowsFormsApp6
             }
             return index;
         }
+
+        public  byte MüsteriIndexBulH(int hesapNo)
+        {
+            byte index = 0;
+            int müsteriNo;
+
+            müsteriNo = (hesapNo - hesapNo % 100) / 100;
+            foreach (Müsteri m in müsteriList)
+            {
+                if (m.müsteriNo == müsteriNo)
+                    break;
+                index++;
+            }
+            return index;
+        }
+
+        public byte MüsteriIndexBul(int müsteriNo)
+        {
+            byte index = 0;
+            
+            foreach (Müsteri m in müsteriList)
+            {
+                if (m.müsteriNo == müsteriNo)
+                    break;
+                index++;
+            }
+            return index;
+        }
+
+        public List<GelirGider> Gelir_GiderOzetListesi()
+        {
+            List<GelirGider> list = new List<GelirGider>();
+
+            GelirGider g;
+
+            foreach (Müsteri m in müsteriList)
+            {
+                g = new GelirGider(m);
+                list.Add(g);
+            }
+            return list;
+        }
+
+
     }
 }

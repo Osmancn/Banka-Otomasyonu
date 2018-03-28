@@ -40,6 +40,7 @@
             this.paraÇekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paraYatırToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.havaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hesapOzetiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yardımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -54,8 +55,7 @@
             this.yardımToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(875, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(688, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,28 +66,29 @@
             this.müşteriListesiToolStripMenuItem,
             this.gelirGiderÖzetiToolStripMenuItem});
             this.bankaİşlemleriToolStripMenuItem.Name = "bankaİşlemleriToolStripMenuItem";
-            this.bankaİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
+            this.bankaİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.bankaİşlemleriToolStripMenuItem.Text = "Banka İşlemleri";
             // 
             // müşteriEklemeToolStripMenuItem
             // 
             this.müşteriEklemeToolStripMenuItem.Name = "müşteriEklemeToolStripMenuItem";
-            this.müşteriEklemeToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.müşteriEklemeToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.müşteriEklemeToolStripMenuItem.Text = "Müşteri Ekleme";
             this.müşteriEklemeToolStripMenuItem.Click += new System.EventHandler(this.müşteriEklemeToolStripMenuItem_Click);
             // 
             // müşteriListesiToolStripMenuItem
             // 
             this.müşteriListesiToolStripMenuItem.Name = "müşteriListesiToolStripMenuItem";
-            this.müşteriListesiToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.müşteriListesiToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.müşteriListesiToolStripMenuItem.Text = "Müşteri Listesi";
             this.müşteriListesiToolStripMenuItem.Click += new System.EventHandler(this.müşteriListesiToolStripMenuItem_Click);
             // 
             // gelirGiderÖzetiToolStripMenuItem
             // 
             this.gelirGiderÖzetiToolStripMenuItem.Name = "gelirGiderÖzetiToolStripMenuItem";
-            this.gelirGiderÖzetiToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.gelirGiderÖzetiToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.gelirGiderÖzetiToolStripMenuItem.Text = "Gelir-Gider Özeti";
+            this.gelirGiderÖzetiToolStripMenuItem.Click += new System.EventHandler(this.gelirGiderÖzetiToolStripMenuItem_Click);
             // 
             // müşteriİşlemleriToolStripMenuItem
             // 
@@ -95,20 +96,20 @@
             this.hesapAçToolStripMenuItem,
             this.hesapKapamaToolStripMenuItem});
             this.müşteriİşlemleriToolStripMenuItem.Name = "müşteriİşlemleriToolStripMenuItem";
-            this.müşteriİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.müşteriİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
             this.müşteriİşlemleriToolStripMenuItem.Text = "Müşteri İşlemleri";
             // 
             // hesapAçToolStripMenuItem
             // 
             this.hesapAçToolStripMenuItem.Name = "hesapAçToolStripMenuItem";
-            this.hesapAçToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.hesapAçToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.hesapAçToolStripMenuItem.Text = "Hesap Açma";
             this.hesapAçToolStripMenuItem.Click += new System.EventHandler(this.hesapAçToolStripMenuItem_Click);
             // 
             // hesapKapamaToolStripMenuItem
             // 
             this.hesapKapamaToolStripMenuItem.Name = "hesapKapamaToolStripMenuItem";
-            this.hesapKapamaToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.hesapKapamaToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.hesapKapamaToolStripMenuItem.Text = "Hesap Kapama";
             this.hesapKapamaToolStripMenuItem.Click += new System.EventHandler(this.hesapKapamaToolStripMenuItem_Click);
             // 
@@ -117,48 +118,55 @@
             this.hesapİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.paraÇekToolStripMenuItem,
             this.paraYatırToolStripMenuItem,
-            this.havaleToolStripMenuItem});
+            this.havaleToolStripMenuItem,
+            this.hesapOzetiToolStripMenuItem});
             this.hesapİşlemleriToolStripMenuItem.Name = "hesapİşlemleriToolStripMenuItem";
-            this.hesapİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
+            this.hesapİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
             this.hesapİşlemleriToolStripMenuItem.Text = "Hesap İşlemleri";
             // 
             // paraÇekToolStripMenuItem
             // 
             this.paraÇekToolStripMenuItem.Name = "paraÇekToolStripMenuItem";
-            this.paraÇekToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.paraÇekToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.paraÇekToolStripMenuItem.Text = "Para Çek";
             this.paraÇekToolStripMenuItem.Click += new System.EventHandler(this.paraÇekToolStripMenuItem_Click);
             // 
             // paraYatırToolStripMenuItem
             // 
             this.paraYatırToolStripMenuItem.Name = "paraYatırToolStripMenuItem";
-            this.paraYatırToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.paraYatırToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.paraYatırToolStripMenuItem.Text = "Para Yatır";
             this.paraYatırToolStripMenuItem.Click += new System.EventHandler(this.paraYatırToolStripMenuItem_Click);
             // 
             // havaleToolStripMenuItem
             // 
             this.havaleToolStripMenuItem.Name = "havaleToolStripMenuItem";
-            this.havaleToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.havaleToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.havaleToolStripMenuItem.Text = "Havale";
             this.havaleToolStripMenuItem.Click += new System.EventHandler(this.havaleToolStripMenuItem_Click);
+            // 
+            // hesapOzetiToolStripMenuItem
+            // 
+            this.hesapOzetiToolStripMenuItem.Name = "hesapOzetiToolStripMenuItem";
+            this.hesapOzetiToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.hesapOzetiToolStripMenuItem.Text = "Hesap Ozeti";
+            this.hesapOzetiToolStripMenuItem.Click += new System.EventHandler(this.hesapOzetiToolStripMenuItem_Click);
             // 
             // yardımToolStripMenuItem
             // 
             this.yardımToolStripMenuItem.Name = "yardımToolStripMenuItem";
-            this.yardımToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.yardımToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.yardımToolStripMenuItem.Text = "yardım";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(875, 443);
+            this.ClientSize = new System.Drawing.Size(688, 547);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Banka Otomasyonu";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -184,6 +192,7 @@
         private System.Windows.Forms.ToolStripMenuItem paraYatırToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem havaleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yardımToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hesapOzetiToolStripMenuItem;
     }
 }
 

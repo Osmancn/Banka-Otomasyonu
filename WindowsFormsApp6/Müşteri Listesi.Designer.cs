@@ -36,18 +36,20 @@
             // grdMusteriListesi
             // 
             this.grdMusteriListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdMusteriListesi.Location = new System.Drawing.Point(12, 12);
+            this.grdMusteriListesi.Location = new System.Drawing.Point(9, 10);
+            this.grdMusteriListesi.Margin = new System.Windows.Forms.Padding(2);
             this.grdMusteriListesi.Name = "grdMusteriListesi";
             this.grdMusteriListesi.RowTemplate.Height = 24;
-            this.grdMusteriListesi.Size = new System.Drawing.Size(636, 284);
+            this.grdMusteriListesi.Size = new System.Drawing.Size(477, 231);
             this.grdMusteriListesi.TabIndex = 0;
             this.grdMusteriListesi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnListele
             // 
-            this.btnListele.Location = new System.Drawing.Point(459, 344);
+            this.btnListele.Location = new System.Drawing.Point(344, 280);
+            this.btnListele.Margin = new System.Windows.Forms.Padding(2);
             this.btnListele.Name = "btnListele";
-            this.btnListele.Size = new System.Drawing.Size(189, 52);
+            this.btnListele.Size = new System.Drawing.Size(142, 42);
             this.btnListele.TabIndex = 1;
             this.btnListele.Text = "Müşteri Listele";
             this.btnListele.UseVisualStyleBackColor = true;
@@ -55,13 +57,15 @@
             // 
             // frmMusteriListe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 408);
+            this.ClientSize = new System.Drawing.Size(495, 332);
             this.Controls.Add(this.btnListele);
             this.Controls.Add(this.grdMusteriListesi);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMusteriListe";
             this.Text = "Müşteri Listesi";
+            this.Load += new System.EventHandler(this.frmMusteriListe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdMusteriListesi)).EndInit();
             this.ResumeLayout(false);
 

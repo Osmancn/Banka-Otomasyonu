@@ -8,22 +8,29 @@ namespace WindowsFormsApp6
 {
     public class Müsteri : Kisi
     {
-        private const short GUNLUKLIMIT = 750;
+        protected const decimal GUNLUKLIMIT = 750;
+        public float HAVALEKATSAYISI;
+
+        public decimal kalanLimit{ get;  set; }
+        public decimal cekilenPara { get; set; }
 
         public List<Hesap> hesapList;
         Hesap hesap;
 
+        protected DateTime ilkCekildigiTarih;
 
-        public int müsteriNo { get; private set; }
-        public byte hesapSayisi { get; protected set; }
-        public byte maxHesapSayisi { get; protected set; }
+        public int müsteriNo { get; protected set; }
+        protected byte hesapSayisi { get; set; }            
+        protected byte maxHesapSayisi { get;  set; }
         public string müsteriTürü { get; protected set; }
-        public float HAVALEKATSAYISI;
-        
+       
         public Müsteri()
         {
             hesapSayisi = 0;
             maxHesapSayisi = 20;
+            ilkCekildigiTarih = DateTime.Now.Date;
+            kalanLimit = GUNLUKLIMIT;
+            cekilenPara = 0;
         }
 
         public Müsteri(int müsteriNo)
@@ -31,6 +38,10 @@ namespace WindowsFormsApp6
             hesapSayisi = 0;
             maxHesapSayisi = 20;
             this.müsteriNo = müsteriNo;
+            ilkCekildigiTarih = DateTime.Now.Date;
+            kalanLimit = GUNLUKLIMIT;
+            cekilenPara = 0;
+
         }
 
         public void MüsteriNoEkle(int müsteriNo)
@@ -56,13 +67,22 @@ namespace WindowsFormsApp6
         { 
             byte index = HesapIndexBul(h);
 
-            if(hesapList[index].hesaptakiPara-m>0)
+            if(ilkCekildigiTarih!=DateTime.Now.Date)
             {
-                hesapList[index].ParaCek(m);
+                kalanLimit = GUNLUKLIMIT;
+                ilkCekildigiTarih = DateTime.Now.Date;
             }
 
-            else if(MüsteriToplamParası()-m>0)
+            if(hesapList[index].hesaptakiPara-m>0 && kalanLimit >= m)
             {
+                kalanLimit -= m;
+                hesapList[index].ParaCek(m);
+                cekilenPara += m;
+            }
+
+            else if(MüsteriToplamParası()-m> 0 && kalanLimit >= m )
+            {
+                kalanLimit -= m;
                 decimal cekilecekPara = m;
                 cekilecekPara -= hesapList[index].hesaptakiPara;
                 hesapList[index].ParaCek(hesapList[index].hesaptakiPara);
@@ -79,6 +99,7 @@ namespace WindowsFormsApp6
                         k.ParaCek(k.hesaptakiPara);
                     }
                 }
+                cekilenPara += m;
             }                
         }
 
@@ -102,7 +123,7 @@ namespace WindowsFormsApp6
                     hesapList[i - 1] = hesapList[i];
                 }
                 hesapList.RemoveAt(hesapList.Count-1);//sondakini siler
-                maxHesapSayisi++;
+                maxHesapSayisi++; 
             }
             else//1tane hesabı var
             {
@@ -129,6 +150,17 @@ namespace WindowsFormsApp6
             foreach (Hesap k in hesapList)
             {
                 if (h.hesapNo == k.hesapNo)
+                    break;
+                index++;
+            }
+            return index;
+        }
+        public byte HesapIndexBul(int no)
+        {
+            byte index = 0;
+            foreach (Hesap k in hesapList)
+            {
+                if (no == k.hesapNo)
                     break;
                 index++;
             }

@@ -16,5 +16,13 @@ namespace WindowsFormsApp6
         {
             InitializeComponent();
         }
+
+        public Banka BankaApp { get; set; }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            grdGelirGider.DataSource = null;
+            grdGelirGider.DataSource = BankaApp.Gelir_GiderOzetListesi();
+        }
     }
 }

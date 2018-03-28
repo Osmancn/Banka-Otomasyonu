@@ -28,19 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnHesapAc = new System.Windows.Forms.Button();
+            this.cmbMusteri = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(169, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Adına Hesap Açılacak Müşteri No:";
+            // 
+            // btnHesapAc
+            // 
+            this.btnHesapAc.Location = new System.Drawing.Point(225, 66);
+            this.btnHesapAc.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHesapAc.Name = "btnHesapAc";
+            this.btnHesapAc.Size = new System.Drawing.Size(94, 22);
+            this.btnHesapAc.TabIndex = 2;
+            this.btnHesapAc.Text = "Hesap Aç";
+            this.btnHesapAc.UseVisualStyleBackColor = true;
+            this.btnHesapAc.Click += new System.EventHandler(this.btnHesapAc_Click);
+            // 
+            // cmbMusteri
+            // 
+            this.cmbMusteri.FormattingEnabled = true;
+            this.cmbMusteri.Location = new System.Drawing.Point(179, 31);
+            this.cmbMusteri.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbMusteri.Name = "cmbMusteri";
+            this.cmbMusteri.Size = new System.Drawing.Size(141, 21);
+            this.cmbMusteri.TabIndex = 3;
+            this.cmbMusteri.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // frmHesapAc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.ClientSize = new System.Drawing.Size(329, 99);
+            this.Controls.Add(this.cmbMusteri);
+            this.Controls.Add(this.btnHesapAc);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmHesapAc";
             this.Text = "Hesap Aç";
+            this.Load += new System.EventHandler(this.frmHesapAc_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnHesapAc;
+        private System.Windows.Forms.ComboBox cmbMusteri;
     }
 }

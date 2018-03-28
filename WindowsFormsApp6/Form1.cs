@@ -21,12 +21,14 @@ namespace WindowsFormsApp6
         {
 
         }
+
         Banka BankaApp = new Banka();
         
         private void müşteriEklemeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmMusteriEkle frmMusteriEkleme = new frmMusteriEkle();
             frmMusteriEkleme.MdiParent = this;
+            frmMusteriEkleme.BankaApp = this.BankaApp;
             frmMusteriEkleme.Show();
         }
 
@@ -42,6 +44,7 @@ namespace WindowsFormsApp6
         {
             frmHesapAc frmHesapAcma = new frmHesapAc();
             frmHesapAcma.MdiParent = this;
+            frmHesapAcma.BankaApp = this.BankaApp;
             frmHesapAcma.Show();
         }
 
@@ -49,6 +52,7 @@ namespace WindowsFormsApp6
         {
             frmHesapKapat frmHesapKapatma = new frmHesapKapat();
             frmHesapKapatma.MdiParent = this;
+            frmHesapKapatma.BankaApp = this.BankaApp;
             frmHesapKapatma.Show();
         }
 
@@ -56,6 +60,7 @@ namespace WindowsFormsApp6
         {
             frmParaCek frmParaCekme = new frmParaCek();
             frmParaCekme.MdiParent = this;
+            frmParaCekme.BankaApp = BankaApp;
             frmParaCekme.Show();
         }
 
@@ -63,6 +68,7 @@ namespace WindowsFormsApp6
         {
             frmParaYatir frmParaYatırma = new frmParaYatir();
             frmParaYatırma.MdiParent = this;
+            frmParaYatırma.BankaApp = this.BankaApp;
             frmParaYatırma.Show();
         }
 
@@ -70,7 +76,24 @@ namespace WindowsFormsApp6
         {
             frmHavale frmHavaleYap = new frmHavale();
             frmHavaleYap.MdiParent = this;
+            frmHavaleYap.BankaApp = this.BankaApp;
             frmHavaleYap.Show();
+        }
+
+        private void gelirGiderÖzetiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGelirGiderOzt frmGelirGiderOzeti = new frmGelirGiderOzt();
+            frmGelirGiderOzeti.MdiParent = this;
+            frmGelirGiderOzeti.BankaApp = this.BankaApp;
+            frmGelirGiderOzeti.Show();
+        }
+
+        private void hesapOzetiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHesapOzeti frmHesapOzet = new frmHesapOzeti();
+            frmHesapOzet.MdiParent = this;
+            frmHesapOzet.BankaApp = this.BankaApp;
+            frmHesapOzet.Show();
         }
     }
 }
